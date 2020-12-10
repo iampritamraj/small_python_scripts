@@ -1,3 +1,8 @@
+
+"""
+Run "pip install speedtest_cli psutil tabulate " in command prompt if you got any error
+"""
+
 import psutil
 import speedtest
 from tabulate import tabulate
