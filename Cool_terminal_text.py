@@ -22,7 +22,11 @@ def window_size(columns=750, height=30):
 
 if __name__ == "__main__":
     window_size(80, 20)
-    print(font("Python_Genius"))
-    loading()
+    text = input("Enter Text Or Press Enter to show default text:")
+    if len(text) == 0:
+        print(font("Pritam_Raj"))
+    else:
+        print(font(text))
+    #loading()
 
 
