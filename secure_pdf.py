@@ -15,7 +15,7 @@ def secure_pdf(file, password):
 
 if __name__ == "__main__":
     file = "kivy.pdf"
-    password = "python_genius"
+    password = "demonew"
     secure_pdf(file, password)
 
     

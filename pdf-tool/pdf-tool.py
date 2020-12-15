@@ -33,35 +33,33 @@ def encrypt():
 		out.appendPagesFromReader(input_pdf)
 		out.encrypt(password)
 		out.write(open(ofilename,"wb"))
-		print "{}[*]{} Saved to '{}'".format(CGREEN,CEND,ofilename)
+		print ("{}[*]{} Saved to '{}'".format(CGREEN,CEND,ofilename))
 	except:
-		print "{}[*]{} Error".format(CRED,CEND)
+		print ("{}[*]{} Error".format(CRED,CEND))
 
 def brute(passwords):
 	pdf = PdfFileReader(open(ns.decrypt,"rb"))
 	try:
 		if(pdf.decrypt(passwords) == 1):
-			print "{}[*]{} Password is: {}".format(CGREEN,CEND,passwords)
+			print ("{}[*]{} Password is: {}".format(CGREEN,CEND,passwords))
 			_exit(0)
 	except:
-		print "\n{}[*]{} Exiting...".format(CRED,CEND)
+		print ("\n{}[*]{} Exiting...".format(CRED,CEND))
 
 def threading():
-        passwords = []
-
+	passwords = []
 	for pwds in open(ns.wordlist,"r"):
 		passwords.append(pwds.rstrip())
-
-	pool = ThreadPool(multiprocessing.cpu_count())
-	pool.map(brute, passwords)
-	pool.close()
-	pool.join()
+		pool = ThreadPool(multiprocessing.cpu_count())
+		pool.map(brute, passwords)
+		pool.close()
+		pool.join()
 
 if __name__ == "__main__":
 
 	# Validations
 	if (len(sys.argv) != 5 and len(sys.argv) != 4):
-        	print "Print -h for usage"
+        	print ("Print -h for usage")
         	sys.exit()
 
 	if(str(ns.password) != "None"):
@@ -81,7 +79,7 @@ if __name__ == "__main__":
 		pdf = PdfFileReader(open(ns.decrypt,"rb"))
 
 		if pdf.isEncrypted:
-                	print "{}[*]{} File '{}' is encrypted. Brute forcing...".format(CPURP,CEND,ns.decrypt)
+                	print ("{}[*]{} File '{}' is encrypted. Brute forcing...".format(CPURP,CEND,ns.decrypt))
 			threading()
 		else:
-                	print "{}[*]{} File '{}' is not password protected!".format(CRED,CEND,ns.decrypt)
+                	print ("{}[*]{} File '{}' is not password protected!".format(CRED,CEND,ns.decrypt))

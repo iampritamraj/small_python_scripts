@@ -18,7 +18,7 @@ def secure_pdf(file, password):
     print(f"encrypted_{file} Created...")
 
 if __name__ == "__main__":
-    file = "kivy.pdf"
-    password = "python_genius"
+    file = "demo.pdf"
+    password = "pritam_raj"
     secure_pdf(file, password)
 

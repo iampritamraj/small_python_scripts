@@ -48,7 +48,6 @@ class Encryptor(object):
             file.write(data)
 
 menu = ("""
-\t [python_genius]
 [Encrypt - Decrypt]
 [0] Exit.
 [1] Encrypt.
